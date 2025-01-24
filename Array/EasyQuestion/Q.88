@@ -1,0 +1,17 @@
+class Solution {
+    public void merge(int[] num1, int m, int[] num2, int n) {
+        int r1=m-1;
+        int r2=num2.length-1;
+        int w=m+n-1;
+        while(w>=0){
+            if(r1>=0 && r2>=0){
+                num1[w]=num1[r1]>num2[r2] ? num1[r1--] : num2[r2--];
+            }else if(r1>=0){
+                num1[w]=num1[r1--];
+            }else{
+                num1[w]=num2[r2--];
+            }
+            w--;
+        }
+    }
+}
